@@ -12,9 +12,9 @@ res.end();
 
 server.listen(8000);
 
-server.on('response', (req,res)=>{
-    res.write('data received');
+const eventEmitter = new EventEmitter()
+eventEmitter.on('response',()=>{
+    console.log('data received in emitt');
 })
 
-const eventEmitter = new EventEmitter();
 eventEmitter.emit('response');
