@@ -1,6 +1,10 @@
 const http = require('http');
 const EventEmitter = require('events');
 
+const server = http.createServer((req,res)=>{
+res.write('server works');
+});
+server.listen(8000);
 
 
 
